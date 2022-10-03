@@ -40,7 +40,7 @@ module Danger
       data = previous_metrics.collect { |val| val[1] }
       data = previous_metrics + [new_metric]
 
-      fields = previous_metrics.collect { |pipeline| "Run #{val[0]}" }
+      fields = previous_metrics.collect { |pipeline| "Run #{pipeline[0]}" }
       fields += [pipeline_id]
 
       default_graph_options = {
@@ -60,7 +60,7 @@ module Danger
 
       g.add_data(:data => data)
 
-      temp_file = Tempfile.new('graph', '.svg')
+      temp_file = Tempfile.new(%w[graph .svg])
       begin
         temp_file.write(g.burn_svg_only)
         uploaded_file = gitlab.api.upload_file(project_id, temp_file.path)
