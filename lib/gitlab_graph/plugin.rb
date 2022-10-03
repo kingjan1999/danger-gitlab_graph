@@ -21,7 +21,7 @@ module Danger
 
       target_branch = gitlab.branch_for_merge
 
-      new_metric = extract_metric_from_pipeline(project_id, pipeline_id, extraction_regex, job_name)
+      _, new_metric = extract_metric_from_pipeline(project_id, pipeline_id, extraction_regex, job_name)
       unless new_metric
         warn("No updated metric found for job #{job_name}")
         return
@@ -38,7 +38,7 @@ module Danger
       # create graph
 
       data = previous_metrics.collect { |val| val[1] }
-      data = previous_metrics + [new_metric]
+      data = data + [new_metric]
 
       fields = previous_metrics.collect { |pipeline| "Run #{pipeline[0]}" }
       fields += [pipeline_id]
