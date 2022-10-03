@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.version       = GitlabGraph::VERSION
   spec.authors       = ["Jan Beckmann"]
   spec.email         = ["king-jan1999@hotmail.de"]
-  spec.description   = "A short description of danger-gitlab_graph."
-  spec.summary       = "A longer description of danger-gitlab_graph."
+  spec.description   = "Danger plugin for creating graph from ci metrics."
+  spec.summary       = "Danger plugin which allows you to extract and visualize metrics over previous ci runs."
   spec.homepage      = "https://github.com/kingjan1999/danger-gitlab_graph"
   spec.license       = "MIT"
 
