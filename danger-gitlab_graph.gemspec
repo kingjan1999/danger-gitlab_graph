@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["king-jan1999@hotmail.de"]
   spec.description   = "A short description of danger-gitlab_graph."
   spec.summary       = "A longer description of danger-gitlab_graph."
-  spec.homepage      = "https://github.com/Jan Beckmann/danger-gitlab_graph"
+  spec.homepage      = "https://github.com/kingjan1999/danger-gitlab_graph"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

@@ -15,7 +15,7 @@ module Danger
   #
   #          my_plugin.warn_on_mondays
   #
-  # @see  Jan Beckmann/danger-gitlab_graph
+  # @see  kingjan1999/danger-gitlab_graph
   # @tags monday, weekends, time, rattata
   #
   class DangerGitlabGraph < Plugin
