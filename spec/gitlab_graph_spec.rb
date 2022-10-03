@@ -16,10 +16,7 @@ module Danger
         @dangerfile = testing_dangerfile
         @my_plugin = @dangerfile.gitlab_graph
 
-        # mock the PR data
-        # you can then use this, eg. github.pr_author, later in the spec
-        json = File.read("#{File.dirname(__FILE__)}/support/fixtures/github_pr.json") # example json: `curl https://api.github.com/repos/danger/danger-plugin-template/pulls/18 > github_pr.json`
-        allow(@my_plugin.github).to receive(:pr_json).and_return(json)
+        allow(@my_plugin.gitlab).to receive(:api).and_return(json)
       end
 
       # Some examples for writing tests

@@ -52,11 +52,8 @@ end
 # running a PR on TravisCI
 def testing_env
   {
-    "HAS_JOSH_K_SEAL_OF_APPROVAL" => "true",
-    "TRAVIS_PULL_REQUEST" => "800",
-    "TRAVIS_REPO_SLUG" => "artsy/eigen",
-    "TRAVIS_COMMIT_RANGE" => "759adcbd0d8f...13c4dc8bb61d",
-    "DANGER_GITHUB_API_TOKEN" => "123sbdq54erfsd3422gdfio"
+    "CI_PIPELINE_ID" => "12346",
+    "CI_PROJECT_ID" => "123"
   }
 end
 
