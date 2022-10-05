@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1119,
+    "iid": 1,
+    "project_id": 216,
+    "sha": "b23f54ecdc3add9abea9344f66b49f1699bff547",
+    "ref": "main",
+    "status": "success",
+    "source": "push",
+    "created_at": "2022-10-03T12:35:08.872Z",
+    "updated_at": "2022-10-03T12:39:15.573Z",
+    "web_url": "https://gitlab-instance.com/danger-test-repo/-/pipelines/1115"
+  }
+]

@@ -1,0 +1,97 @@
+[
+  {
+    "id": 2723,
+    "status": "success",
+    "stage": "test",
+    "name": "test1",
+    "ref": "main",
+    "tag": false,
+    "coverage": null,
+    "allow_failure": false,
+    "created_at": "2022-10-03T13:31:51.194Z",
+    "started_at": "2022-10-03T13:32:39.680Z",
+    "finished_at": "2022-10-03T13:32:48.132Z",
+    "duration": 8.451455,
+    "queued_duration": 47.08147,
+    "user": {
+      "id": 2,
+      "username": "username",
+      "name": "fullname",
+      "state": "active",
+      "avatar_url": "https://secure.gravatar.com/avatar/",
+      "web_url": "https://gitlab-instance.example.com/username",
+      "created_at": "2017-09-25T17:57:20.456Z",
+      "bio": "",
+      "location": "",
+      "public_email": "",
+      "skype": "",
+      "linkedin": "",
+      "twitter": "",
+      "website_url": "",
+      "organization": "",
+      "job_title": "",
+      "pronouns": null,
+      "bot": false,
+      "work_information": null,
+      "followers": 0,
+      "following": 0,
+      "local_time": null
+    },
+    "commit": {
+      "id": "c54d9bacac8766604c41843938c803cd81aab975",
+      "short_id": "c54d9bac",
+      "created_at": "2022-10-03T15:31:49.000+02:00",
+      "parent_ids": [
+        "377fb044448f01c297771913ae71d05309eb664d"
+      ],
+      "title": "bm",
+      "message": "bm\n",
+      "author_name": "fullname",
+      "author_email": "email",
+      "authored_date": "2022-10-03T15:31:49.000+02:00",
+      "committer_name": "fullname",
+      "committer_email": "email",
+      "committed_date": "2022-10-03T15:31:49.000+02:00",
+      "trailers": {},
+      "web_url": "https://gitlab-instance.example.com/username/danger-test-repo/-/commit/c54d9bacac8766604c41843938c803cd81aab975"
+    },
+    "pipeline": {
+      "id": 123456,
+      "iid": 4,
+      "project_id": 216,
+      "sha": "c54d9bacac8766604c41843938c803cd81aab975",
+      "ref": "main",
+      "status": "success",
+      "source": "push",
+      "created_at": "2022-10-03T13:31:51.178Z",
+      "updated_at": "2022-10-03T13:38:10.801Z",
+      "web_url": "https://gitlab-instance.example.com/username/danger-test-repo/-/pipelines/123456"
+    },
+    "web_url": "https://git.jbeckmann.info/kingjan1999/danger-test-repo/-/jobs/2722",
+    "project": {
+      "ci_job_token_scope_enabled": false
+    },
+    "artifacts": [
+      {
+        "file_type": "trace",
+        "size": 2576,
+        "filename": "job.log",
+        "file_format": null
+      }
+    ],
+    "runner": {
+      "id": 5,
+      "description": "7171d2237404",
+      "ip_address": "172.18.0.3",
+      "active": true,
+      "paused": false,
+      "is_shared": false,
+      "runner_type": "project_type",
+      "name": "gitlab-runner",
+      "online": true,
+      "status": "online"
+    },
+    "artifacts_expire_at": null,
+    "tag_list": []
+  }
+]

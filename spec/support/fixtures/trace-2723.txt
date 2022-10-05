@@ -1,0 +1,49 @@
+[0KRunning with gitlab-runner 15.4.0 (43b2dc3d)[0;m
+[0K  on 7171d2237404 41ce2754[0;m
+section_start:1664803959:prepare_executor
+[0K[0K[36;1mPreparing the "docker" executor[0;m[0;m
+[0KUsing Docker executor with image busybox:latest ...[0;m
+[0KPulling docker image busybox:latest ...[0;m
+[0KUsing docker image sha256:2bd29714875d9206777f9e8876033cbcd58edd14f2c0f1203435296b3f31c5f7 for busybox:latest with digest busybox@sha256:ad9bd57a3a57cc95515c537b89aaa69d83a6df54c4050fcf2b41ad367bec0cd5 ...[0;m
+section_end:1664803963:prepare_executor
+[0Ksection_start:1664803963:prepare_script
+[0K[0K[36;1mPreparing environment[0;m[0;m
+Running on runner-41ce2754-project-216-concurrent-0 via 0e9c9113aa94...
+section_end:1664803963:prepare_script
+[0Ksection_start:1664803963:get_sources
+[0K[0K[36;1mGetting source from Git repository[0;m[0;m
+[32;1mFetching changes with git depth set to 20...[0;m
+Reinitialized existing Git repository in /builds/username/danger-test-repo/.git/
+[32;1mChecking out c54d9bac as main...[0;m
+
+[32;1mSkipping Git submodules setup[0;m
+section_end:1664803965:get_sources
+[0Ksection_start:1664803965:step_script
+[0K[0K[36;1mExecuting "step_script" stage of the job script[0;m[0;m
+[0KUsing docker image sha256:2bd29714875d9206777f9e8876033cbcd58edd14f2c0f1203435296b3f31c5f7 for busybox:latest with digest busybox@sha256:ad9bd57a3a57cc95515c537b89aaa69d83a6df54c4050fcf2b41ad367bec0cd5 ...[0;m
+[32;1m$ echo "Before script section"[0;m
+Before script section
+[32;1m$ echo "For example you might run an update here or install a build dependency"[0;m
+For example you might run an update here or install a build dependency
+[32;1m$ echo "Or perhaps you might print out some debugging details"[0;m
+Or perhaps you might print out some debugging details
+[32;1m$ echo "Do a test here"[0;m
+Do a test here
+[32;1m$ echo "For example run a test suite"[0;m
+For example run a test suite
+[32;1m$ echo "Test took $((1 + $RANDOM % 10))s"[0;m
+Test took 6s
+Test slept 14s
+section_end:1664803966:step_script
+[0Ksection_start:1664803966:after_script
+[0K[0K[36;1mRunning after_script[0;m[0;m
+[32;1mRunning after script...[0;m
+[32;1m$ echo "After script section"[0;m
+After script section
+[32;1m$ echo "For example you might do some cleanup here"[0;m
+For example you might do some cleanup here
+section_end:1664803967:after_script
+[0Ksection_start:1664803967:cleanup_file_variables
+[0K[0K[36;1mCleaning up project directory and file based variables[0;m[0;m
+section_end:1664803967:cleanup_file_variables
+[0K[32;1mJob succeeded[0;m

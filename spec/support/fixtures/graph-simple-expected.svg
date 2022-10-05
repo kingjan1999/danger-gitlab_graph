@@ -1,0 +1,369 @@
+<svg width='640' height='480' viewBox='0 0 640 480' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:a3='http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/' a3:scriptImplementation='Adobe'>
+<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+<!-- Created with SVG::Graph -->
+<!-- SVG::Graph by Sean E. Russell -->
+<!-- Losely based on SVG::TT::Graph for Perl by Leo Lapworth & Stephan Morgan -->
+<!-- //////////////////////////////////////////////////////////////////-->
+<defs>
+<style type='text/css'>
+<![CDATA[/* Copy from here for external style sheet */
+.svgBackground{
+  fill:#ffffff;
+}
+.graphBackground{
+  fill:#f0f0f0;
+}
+
+/* graphs titles */
+.mainTitle{
+  text-anchor: middle;
+  fill: #000000;
+  font-size: 16px;
+  font-family: "Arial", sans-serif;
+  font-weight: normal;
+}
+.subTitle{
+  text-anchor: middle;
+  fill: #999999;
+  font-size: 14px;
+  font-family: "Arial", sans-serif;
+  font-weight: normal;
+}
+
+.axis{
+  stroke: #000000;
+  stroke-width: 1px;
+}
+
+.guideLines{
+  stroke: #666666;
+  stroke-width: 1px;
+  stroke-dasharray: 5 5;
+}
+
+.xAxisLabels{
+  text-anchor: middle;
+  fill: #000000;
+  font-size: 12px;
+  font-family: "Arial", sans-serif;
+  font-weight: normal;
+}
+
+.yAxisLabels{
+  text-anchor: end;
+  fill: #000000;
+  font-size: 12px;
+  font-family: "Arial", sans-serif;
+  font-weight: normal;
+}
+
+.xAxisTitle{
+  text-anchor: middle;
+  fill: #ff0000;
+  font-size: 14px;
+  font-family: "Arial", sans-serif;
+  font-weight: normal;
+}
+
+.yAxisTitle{
+  fill: #ff0000;
+  text-anchor: middle;
+  font-size: 14px;
+  font-family: "Arial", sans-serif;
+  font-weight: normal;
+}
+
+.dataPointLabel, .dataPointLabelBackground, .dataPointPopup, .dataPointPopupMask{
+  fill: #000000;
+  text-anchor:middle;
+  font-size: 10px;
+  font-family: "Arial", sans-serif;
+  font-weight: normal;
+}
+
+.dataPointLabelBackground{
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+.dataPointPopupMask{
+  stroke: white;
+  stroke-width: 7;
+}
+
+.dataPointPopup{
+  fill: black;
+  stroke-width: 2;
+}
+
+.staggerGuideLine{
+  fill: none;
+  stroke: #000000;
+  stroke-width: 0.5px;
+}
+
+/* default line styles */
+.line1{
+	fill: none;
+	stroke: #ff0000;
+	stroke-width: 1px;
+}
+.line2{
+	fill: none;
+	stroke: #0000ff;
+	stroke-width: 1px;
+}
+.line3{
+	fill: none;
+	stroke: #00ff00;
+	stroke-width: 1px;
+}
+.line4{
+	fill: none;
+	stroke: #ffcc00;
+	stroke-width: 1px;
+}
+.line5{
+	fill: none;
+	stroke: #00ccff;
+	stroke-width: 1px;
+}
+.line6{
+	fill: none;
+	stroke: #ff00ff;
+	stroke-width: 1px;
+}
+.line7{
+	fill: none;
+	stroke: #00ffff;
+	stroke-width: 1px;
+}
+.line8{
+	fill: none;
+	stroke: #ffff00;
+	stroke-width: 1px;
+}
+.line9{
+	fill: none;
+	stroke: #ccc6666;
+	stroke-width: 1px;
+}
+.line10{
+	fill: none;
+	stroke: #663399;
+	stroke-width: 1px;
+}
+.line11{
+	fill: none;
+	stroke: #339900;
+	stroke-width: 1px;
+}
+.line12{
+	fill: none;
+	stroke: #9966FF;
+	stroke-width: 1px;
+}
+/* default fill styles */
+.fill1{
+	fill: #cc0000;
+	fill-opacity: 0.2;
+	stroke: none;
+}
+.fill2{
+	fill: #0000cc;
+	fill-opacity: 0.2;
+	stroke: none;
+}
+.fill3{
+	fill: #00cc00;
+	fill-opacity: 0.2;
+	stroke: none;
+}
+.fill4{
+	fill: #ffcc00;
+	fill-opacity: 0.2;
+	stroke: none;
+}
+.fill5{
+	fill: #00ccff;
+	fill-opacity: 0.2;
+	stroke: none;
+}
+.fill6{
+	fill: #ff00ff;
+	fill-opacity: 0.2;
+	stroke: none;
+}
+.fill7{
+	fill: #00ffff;
+	fill-opacity: 0.2;
+	stroke: none;
+}
+.fill8{
+	fill: #ffff00;
+	fill-opacity: 0.2;
+	stroke: none;
+}
+.fill9{
+	fill: #cc6666;
+	fill-opacity: 0.2;
+	stroke: none;
+}
+.fill10{
+	fill: #663399;
+	fill-opacity: 0.2;
+	stroke: none;
+}
+.fill11{
+	fill: #339900;
+	fill-opacity: 0.2;
+	stroke: none;
+}
+.fill12{
+	fill: #9966FF;
+	fill-opacity: 0.2;
+	stroke: none;
+}
+/* default line styles */
+.key1,.dataPoint1{
+	fill: #ff0000;
+	stroke: none;
+	stroke-width: 1px;
+}
+.key2,.dataPoint2{
+	fill: #0000ff;
+	stroke: none;
+	stroke-width: 1px;
+}
+.key3,.dataPoint3{
+	fill: #00ff00;
+	stroke: none;
+	stroke-width: 1px;
+}
+.key4,.dataPoint4{
+	fill: #ffcc00;
+	stroke: none;
+	stroke-width: 1px;
+}
+.key5,.dataPoint5{
+	fill: #00ccff;
+	stroke: none;
+	stroke-width: 1px;
+}
+.key6,.dataPoint6{
+	fill: #ff00ff;
+	stroke: none;
+	stroke-width: 1px;
+}
+.key7,.dataPoint7{
+	fill: #00ffff;
+	stroke: none;
+	stroke-width: 1px;
+}
+.key8,.dataPoint8{
+	fill: #ffff00;
+	stroke: none;
+	stroke-width: 1px;
+}
+.key9,.dataPoint9{
+	fill: #cc6666;
+	stroke: none;
+	stroke-width: 1px;
+}
+.key10,.dataPoint10{
+	fill: #663399;
+	stroke: none;
+	stroke-width: 1px;
+}
+.key11,.dataPoint11{
+	fill: #339900;
+	stroke: none;
+	stroke-width: 1px;
+}
+.key12,.dataPoint12{
+	fill: #9966FF;
+	stroke: none;
+	stroke-width: 1px;
+}
+
+
+.keyText{
+  fill: #000000;
+  text-anchor:start;
+  font-size: 10px;
+  font-family: "Arial", sans-serif;
+  font-weight: normal;
+}
+/* End copy for external style sheet */
+]]>
+</style>
+</defs>
+<!-- include default stylesheet if none specified -->
+<!--SVG Background-->
+<rect width='640' height='480' x='0' y='0' class='svgBackground'/>
+<g transform='translate( 77.0 26 )'>
+<rect x='0' y='0' width='468.0' height='413' class='graphBackground'/>
+<path d='M 0 413 h468.0' class='axis' id='yAxis'/>
+<path d='M 0.0 0 v413' class='axis' id='xAxis'/>
+<text class='xAxisLabels' x='0.0' y='428' style='text-anchor: middle'>b23f54ec</text>
+<text class='xAxisLabels' x='468.0' y='428' style='text-anchor: middle'>33333333</text>
+<text x='-19.5' y='417.0' class='yAxisLabels' style='text-anchor: middle' transform='translate( -12 0 ) rotate( 0 -19.5 417.0 ) '>4.00s</text>
+<text x='-19.5' y='379.45454545454544' class='yAxisLabels' style='text-anchor: middle' transform='translate( -12 0 ) rotate( 0 -19.5 379.45454545454544 ) '>5.26s</text>
+<path d='M0 375.45454545454544 h468.0' class='guideLines'/>
+<text x='-19.5' y='341.9090909090909' class='yAxisLabels' style='text-anchor: middle' transform='translate( -12 0 ) rotate( 0 -19.5 341.9090909090909 ) '>6.52s</text>
+<path d='M0 337.9090909090909 h468.0' class='guideLines'/>
+<text x='-19.5' y='304.3636363636364' class='yAxisLabels' style='text-anchor: middle' transform='translate( -12 0 ) rotate( 0 -19.5 304.3636363636364 ) '>7.78s</text>
+<path d='M0 300.3636363636364 h468.0' class='guideLines'/>
+<text x='-19.5' y='266.8181818181818' class='yAxisLabels' style='text-anchor: middle' transform='translate( -12 0 ) rotate( 0 -19.5 266.8181818181818 ) '>9.04s</text>
+<path d='M0 262.8181818181818 h468.0' class='guideLines'/>
+<text x='-19.5' y='229.27272727272725' class='yAxisLabels' style='text-anchor: middle' transform='translate( -12 0 ) rotate( 0 -19.5 229.27272727272725 ) '>10.30s</text>
+<path d='M0 225.27272727272725 h468.0' class='guideLines'/>
+<text x='-19.5' y='191.72727272727272' class='yAxisLabels' style='text-anchor: middle' transform='translate( -12 0 ) rotate( 0 -19.5 191.72727272727272 ) '>11.56s</text>
+<path d='M0 187.72727272727272 h468.0' class='guideLines'/>
+<text x='-19.5' y='154.1818181818182' class='yAxisLabels' style='text-anchor: middle' transform='translate( -12 0 ) rotate( 0 -19.5 154.1818181818182 ) '>12.82s</text>
+<path d='M0 150.1818181818182 h468.0' class='guideLines'/>
+<text x='-19.5' y='116.63636363636363' class='yAxisLabels' style='text-anchor: middle' transform='translate( -12 0 ) rotate( 0 -19.5 116.63636363636363 ) '>14.08s</text>
+<path d='M0 112.63636363636363 h468.0' class='guideLines'/>
+<text x='-19.5' y='79.09090909090907' class='yAxisLabels' style='text-anchor: middle' transform='translate( -12 0 ) rotate( 0 -19.5 79.09090909090907 ) '>15.34s</text>
+<path d='M0 75.09090909090907 h468.0' class='guideLines'/>
+<text x='-19.5' y='41.545454545454504' class='yAxisLabels' style='text-anchor: middle' transform='translate( -12 0 ) rotate( 0 -19.5 41.545454545454504 ) '>16.60s</text>
+<path d='M0 37.545454545454504 h468.0' class='guideLines'/>
+<path d='M0 413 L0.0 413.0 468.0 115.02020202020208 ' class='line2'/>
+<circle cx='0.0' cy='413.0' r='2.5' class='dataPoint2'/>
+<circle cx='468.0' cy='115.02020202020208' r='2.5' class='dataPoint2'/>
+<path d='M0 413 L0.0 55.42424242424249 468.0 353.4040404040404 ' class='line1'/>
+<circle cx='0.0' cy='55.42424242424249' r='2.5' class='dataPoint1'/>
+<circle cx='468.0' cy='353.4040404040404' r='2.5' class='dataPoint1'/>
+<g>
+<text x='0.0' y='407.0' class='dataPointLabelBackground' style='text-anchor: start;'>4.00s</text>
+<text x='0.0' y='407.0' class='dataPointLabel' style='text-anchor: start;'>4.00s</text>
+<a xlink:href=''>
+<circle cx='0.0' cy='413.0' r='10' style='opacity: 0'/>
+</a>
+<text x='468.0' y='109.02020202020208' class='dataPointLabelBackground' style='text-anchor: end;'>14.00s</text>
+<text x='468.0' y='109.02020202020208' class='dataPointLabel' style='text-anchor: end;'>14.00s</text>
+<a xlink:href=''>
+<circle cx='468.0' cy='115.02020202020208' r='10' style='opacity: 0'/>
+</a>
+<text x='0.0' y='49.42424242424249' class='dataPointLabelBackground' style='text-anchor: start;'>16.00s</text>
+<text x='0.0' y='49.42424242424249' class='dataPointLabel' style='text-anchor: start;'>16.00s</text>
+<a xlink:href=''>
+<circle cx='0.0' cy='55.42424242424249' r='10' style='opacity: 0'/>
+</a>
+<text x='468.0' y='347.4040404040404' class='dataPointLabelBackground' style='text-anchor: end;'>6.00s</text>
+<text x='468.0' y='347.4040404040404' class='dataPointLabel' style='text-anchor: end;'>6.00s</text>
+<a xlink:href=''>
+<circle cx='468.0' cy='353.4040404040404' r='10' style='opacity: 0'/>
+</a>
+</g>
+</g>
+<text x='320' y='16' class='mainTitle'>Performance Metric</text>
+<text x='311.0' y='468' class='xAxisTitle'>Commit</text>
+<text x='17' y='232' class='yAxisTitle' transform='rotate( -90, 17, 232 )'>Metric Value</text>
+<g transform='translate(555.0 36)'>
+<rect x='0' y='0' width='12' height='12' class='key1'/>
+<text x='17' y='12' class='keyText'>Performance</text>
+<rect x='0' y='17' width='12' height='12' class='key2'/>
+<text x='17' y='29' class='keyText'>IDLE time</text>
+</g>
+</svg>

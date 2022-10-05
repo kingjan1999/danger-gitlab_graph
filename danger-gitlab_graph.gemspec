@@ -48,4 +48,7 @@ Gem::Specification.new do |spec|
   #
   # This will stop test execution and let you inspect the results
   spec.add_development_dependency "pry"
+
+  spec.add_development_dependency "danger-gitlab"
+  spec.add_development_dependency "webmock", "~> 2.1"
 end
