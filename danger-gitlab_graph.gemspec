@@ -5,19 +5,20 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "gitlab_graph/gem_version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "danger-gitlab_graph"
-  spec.version       = GitlabGraph::VERSION
-  spec.authors       = ["Jan Beckmann"]
-  spec.email         = ["king-jan1999@hotmail.de"]
-  spec.description   = "Danger plugin for creating graph from ci metrics."
-  spec.summary       = "Danger plugin which allows you to extract and visualize metrics over previous ci runs."
-  spec.homepage      = "https://github.com/kingjan1999/danger-gitlab_graph"
-  spec.license       = "MIT"
+  spec.name                  = "danger-gitlab_graph"
+  spec.version               = GitlabGraph::VERSION
+  spec.authors               = ["Jan Beckmann"]
+  spec.email                 = ["king-jan1999@hotmail.de"]
+  spec.description           = "Danger plugin for creating graph from ci metrics."
+  spec.summary               = "Danger plugin which allows you to extract and visualize metrics over previous ci runs."
+  spec.homepage              = "https://github.com/kingjan1999/danger-gitlab_graph"
+  spec.license               = "MIT"
+  spec.required_ruby_version = ">= 2.7.0"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
+  spec.metadata["rubygems_mfa_required"] = "true"
 
   spec.add_runtime_dependency "danger-plugin-api", "~> 1.0"
   spec.add_runtime_dependency "svg-graph", "~> 2.2.1"

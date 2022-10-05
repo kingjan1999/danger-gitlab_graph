@@ -1,23 +1,32 @@
 # frozen_string_literal: true
-require 'svggraph'
+
+require "svggraph"
 
 module Danger
   # This plugin retrieves a certain metric from previous job runs and displays them as a graph
   #
   # @example Extract values from job "test" with the given regex
   #
-  #          gitlab_graph.report_metric(/performance: ([0-9]+)s/, "test")
+  #          gitlab_graph.report_metric([{
+  #                                     regex: /took ([0-9]+)/,
+  #                                     series_name: "Performance",
+  #                                     job_name: "test1"
+  #                                   }, {
+  #                                     regex: /slept ([0-9]+)/,
+  #                                     series_name: "IDLE time",
+  #                                     job_name: "test1"
+  #                                   }])
   #
+  # outputs a graph similiar to this ![sample graph](spec/support/fixtures/graph-simple-expected.svg)
   # @see  kingjan1999/danger-gitlab_graph
   # @tags gitlab, graph, performance
   #
   class DangerGitlabGraph < Plugin
-
     # Gathers metric data from current and pevious pipelines
-    # @return Arrray<{pipeline_id => int, :metric => float}>
+    # @return [Arrray<{pipeline_id => int, :metric => float}>]
     def gather_metric(extraction_config, prev_pipeline_count = 10)
       pipeline_id = ENV["CI_PIPELINE_ID"].to_i
-      project_id = ENV["CI_PROJECT_ID"]
+      project_id = ENV.fetch("CI_PROJECT_ID", nil)
 
       target_branch = gitlab.branch_for_merge
 
@@ -34,36 +43,34 @@ module Danger
       end
 
       previous_target_branch_pipelines = gitlab.api.pipelines(project_id, {
-        status: 'success',
+        status: "success",
         ref: target_branch,
         per_page: prev_pipeline_count
       })
 
       previous_metrics = previous_target_branch_pipelines.collect do |pipeline|
-        begin
-          extract_metric_from_pipeline(project_id, pipeline.id, extraction_config[:regex], extraction_config[:job_name]).merge(hash: pipeline.sha)
-        rescue JobNotFoundException
-          return { pipeline_id: pipeline.id, metric: false, hash: pipeline.sha }
-        end
+        extract_metric_from_pipeline(project_id, pipeline.id, extraction_config[:regex], extraction_config[:job_name]).merge(hash: pipeline.sha)
+      rescue JobNotFoundException
+        return { pipeline_id: pipeline.id, metric: false, hash: pipeline.sha }
       end
 
-      previous_metrics + [new_metric.merge(hash: ENV["CI_COMMIT_SHA"])]
+      previous_metrics + [new_metric.merge(hash: ENV.fetch("CI_COMMIT_SHA", "invalid_hash"))]
     end
 
     # Creates and comments a graph based on a certain metric, extracted via regex
-    # @param extraction_regex Hash-Array: {:regex, :job_name, :series_name}
-    # @param job_name Job name to extract from
-    # @param prev_pipeline_count
-    # @param graph_option see svg-graph doc
+    # @param [Array<hash>] extraction_configs Hash-Array: {:regex, :job_name, :series_name}
+    # @param [int] prev_pipeline_count
+    # @param [hash] graph_options see svg-graph doc
+    # @return [void]
     def report_metric(extraction_configs, prev_pipeline_count = 10, graph_options = {})
-      project_id = ENV["CI_PROJECT_ID"]
+      project_id = ENV.fetch("CI_PROJECT_ID", nil)
 
       fields = nil
       all_data = []
       extraction_configs.each do |extraction_config|
         all_metrics = gather_metric(extraction_config, prev_pipeline_count)
 
-        if all_metrics.length == 0
+        if all_metrics.length.zero?
           next
         end
 
@@ -74,12 +81,12 @@ module Danger
 
         data = all_metrics.collect { |val| val[:metric] }
 
-        fields ||= all_metrics.collect { |pipeline| "#{pipeline[:hash][0..7]}" }
+        fields ||= all_metrics.collect { |pipeline| pipeline[:hash][0..7] }
 
         all_data.push({ data: data, title: extraction_config[:series_name] })
       end
 
-      if all_data.length == 0
+      if all_data.empty?
         return
       end
 
@@ -101,7 +108,7 @@ module Danger
 
       all_data.each { |elem| g.add_data(data: elem[:data], title: elem[:title]) }
 
-      temp_file = Tempfile.new(%w[graph .svg])
+      temp_file = Tempfile.new(%w(graph .svg))
       begin
         temp_file.write(g.burn_svg_only)
         uploaded_file = gitlab.api.upload_file(project_id, temp_file.path)
@@ -130,7 +137,6 @@ module Danger
     end
 
     class JobNotFoundException < StandardError
-
     end
   end
 end

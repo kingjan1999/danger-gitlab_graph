@@ -25,18 +25,17 @@ module Danger
         pipelines = File.read("#{File.dirname(__FILE__)}/support/fixtures/pipelines.json")
 
         # stub requests
-        stub_jobs(123456)
+        stub_jobs(123_456)
         stub_jobs(1119)
 
         stub_trace(2722)
         stub_trace(2723)
 
         stub_request(:get, "https://gitlab.com/api/v4/projects/123/pipelines?per_page=10&ref=main&status=success").
-          to_return(:status => 200, :body => pipelines, :headers => {})
+          to_return(status: 200, body: pipelines, headers: {})
 
         stub_request(:post, "https://gitlab.com/api/v4/projects/123/uploads").
           to_return do |request|
-
           svg_file = request.body[request.body.index("<svg")..request.body.index("</svg>") + 5]
           graph_tmpfile = Tempfile.new(["tmp-graph", ".svg"])
           begin
@@ -45,11 +44,10 @@ module Danger
             graph_tmpfile.close
           end
 
-          { :status => 200, :body => {
+          { status: 200, body: {
             markdown: "![description](/link)"
-          }.to_json, :headers => {} }
+          }.to_json, headers: {} }
         end
-
       end
 
       after do
@@ -102,8 +100,8 @@ module Danger
                                            })
 
         expect(@dangerfile.status_report[:warnings]).to eq([])
-        expect(metrics).to eq([{ :hash => "b23f54ecdc3add9abea9344f66b49f1699bff547", :metric => 16.0, :pipeline_id => 1119 },
-                               { :hash => "3333333333333333333333333333333333333333", :metric => 6.0, :pipeline_id => 123456 }])
+        expect(metrics).to eq([{ hash: "b23f54ecdc3add9abea9344f66b49f1699bff547", metric: 16.0, pipeline_id: 1119 },
+                               { hash: "3333333333333333333333333333333333333333", metric: 6.0, pipeline_id: 123_456 }])
       end
     end
   end

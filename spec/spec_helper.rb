@@ -4,8 +4,8 @@ require "pathname"
 ROOT = Pathname.new(File.expand_path("..", __dir__))
 $:.unshift("#{ROOT}lib".to_s)
 $:.unshift("#{ROOT}spec".to_s)
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-$LOAD_PATH.unshift File.expand_path("../..", __FILE__)
+$LOAD_PATH.unshift File.expand_path("../lib", __dir__)
+$LOAD_PATH.unshift File.expand_path("..", __dir__)
 
 require "bundler/setup"
 require "pry"
