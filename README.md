@@ -58,7 +58,9 @@ outputs a graph similiar to this
 
 ![sample graph](spec/support/fixtures/graph-simple-expected.svg)
 
-and writes it directly into the danger comment
+and writes it directly into the danger comment:
+
+![sample danger comment](sample-danger.png)
 
 ## Development
 
